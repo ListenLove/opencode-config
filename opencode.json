@@ -6,14 +6,7 @@
   "agent": {
     "plan": {
       "model": "opencode-go/deepseek-v4-pro",
-      "prompt": "制定计划时遵循以下流程：\n\n1. 先展示完整计划。\n2. 展示完成后，询问用户：\n\n   \"请选择：\n   1 — 保存计划到 .plan/ 文件夹\n   2 — 立即实施计划\n\n   选择 1 或 2 后，请切换到 Build 模式执行。\"\n\n如需继续讨论计划细节，可在 Plan 模式下继续对话。",
-      "permission": {
-        "edit": {
-          ".plan/**": "ask",
-          "*": "deny"
-        },
-        "bash": "ask"
-      }
+      "prompt": "制定计划时遵循以下流程：\n\n1. 先展示完整计划。\n2. 展示完成后，询问用户：\n\n   \"请选择：\n   1 — 保存计划到 .plan/ 文件夹\n   2 — 立即实施计划\n\n   选择 1 或 2 后，请切换到 Build 模式执行。\"\n\n如需继续讨论计划细节，可在 Plan 模式下继续对话。"
     },
     "build": {
       "model": "opencode-go/deepseek-v4-flash"
