@@ -28,7 +28,8 @@
 ## 安装
 
 复制下面这句话，发给你的 AI 编码助手就行：
-
-> 帮我安装 ListenLove/opencode-config 这套 opencode 配置到本地。
+```txt
+帮我安装 ListenLove/opencode-config 这套 opencode 配置到本地。
+```
 
 AI 会自动去 GitHub 拉取文件并写入到 `~/.config/opencode/`，覆盖已有配置。
