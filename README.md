@@ -1,11 +1,10 @@
-# opencode-config
-
+# codespace-config
 个人系统级配置文件仓库，按工具/用途分目录管理。
 
 ## 目录结构
 
 ```
-opencode-config/
+codespace-config/
 ├── opencode/          # AI 编码助手 opencode 配置
 ├── tmux/              # 终端复用器 tmux 配置
 └── ...
