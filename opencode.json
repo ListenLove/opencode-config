@@ -3,6 +3,17 @@
   "default_agent": "plan",
   "model": "opencode-go/deepseek-v4-pro",
   "small_model": "opencode-go/deepseek-v4-flash",
+  "skills": {
+    "paths": ["./skills"]
+  },
+  "command": {
+    "deepmax": {
+      "template": "请立即使用 skill 工具加载 deepmax 技能。加载后，在当前对话的后续所有回复中，持续以 DeepSeek MAX 模式运行——进行最深度的推理分析，不跳过任何推理步骤，主动探索多种方案并自我纠错。",
+      "description": "启用 DeepSeek V4 MAX 模式——最大推理深度，用于复杂问题",
+      "agent": "plan",
+      "model": "opencode-go/deepseek-v4-pro"
+    }
+  },
   "agent": {
     "plan": {
       "model": "opencode-go/deepseek-v4-pro",
@@ -16,6 +27,6 @@
     },
     "general": {
       "model": "opencode-go/deepseek-v4-flash"
-    },
+    }
   }
 }
