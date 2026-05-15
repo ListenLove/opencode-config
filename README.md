@@ -15,7 +15,7 @@ opencode-config/
 
 ### [opencode](./opencode/)
 
-[opencode](https://opencode.ai) AI 编码助手配置，包含行为规范（Karpathy 原则）、模型分配、深度推理技能。
+[opencode](https://opencode.ai) AI 编码助手配置，包含行为规范（Karpathy 原则）、模型分配、深度推理技能、Plannotator 插件、MCP markitdown 文档解析（通过 uvx 运行）。
 
 详见 [`opencode/README.md`](./opencode/README.md)
 

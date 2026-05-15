@@ -3,21 +3,24 @@
   "default_agent": "plan",
   "model": "opencode-go/deepseek-v4-pro",
   "small_model": "opencode-go/deepseek-v4-flash",
+  "lsp": true,
   "skills": {
     "paths": ["./skills"]
   },
+  "plugin": [["@plannotator/opencode@latest", {"workflow": "plan-agent"}]],
   "command": {
     "deepmax": {
       "template": "请立即使用 skill 工具加载 deepmax 技能。加载后，在当前对话的后续所有回复中，持续以 DeepSeek MAX 模式运行——进行最深度的推理分析，不跳过任何推理步骤，主动探索多种方案并自我纠错。",
       "description": "启用 DeepSeek V4 MAX 模式——最大推理深度，用于复杂问题",
       "agent": "plan",
-      "model": "opencode-go/deepseek-v4-pro"
+      "model": "opencode-go/deepseek-v4-pro",
+      "variant": "max"
     }
   },
   "agent": {
     "plan": {
       "model": "opencode-go/deepseek-v4-pro",
-      "prompt": "制定计划时遵循以下流程：\n\n1. 先展示完整计划。\n2. 展示完成后，询问用户：\n\n   \"请选择：\n   1 — 保存计划到 .plan/ 文件夹\n   2 — 立即实施计划\n\n   选择 1 或 2 后，请切换到 Build 模式执行。\"\n\n如需继续讨论计划细节，可在 Plan 模式下继续对话。"
+      "prompt": "制定计划时：\n1. 充分探索代码库，理解现有架构和模式。\n2. 如有不确定的信息，主动向用户提问澄清。\n3. 制定完整计划后，调用 submit_plan 工具提交用户审阅。\n4. 收到用户反馈后修改计划并重新提交，直至批准。"
     },
     "build": {
       "model": "opencode-go/deepseek-v4-flash"
@@ -27,6 +30,13 @@
     },
     "general": {
       "model": "opencode-go/deepseek-v4-flash"
+    }
+  },
+  "mcp": {
+    "markitdown": {
+      "type": "local",
+      "command": ["uvx", "markitdown-mcp"],
+      "enabled": true
     }
   }
 }
