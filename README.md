@@ -7,6 +7,7 @@
 codespace-config/
 ├── opencode/          # AI 编码助手 opencode 配置
 ├── tmux/              # 终端复用器 tmux 配置
+├── vscode-neovim/     # Neovim 双模式配置（VSCode + 原生终端）
 └── ...
 ```
 
@@ -23,6 +24,12 @@ codespace-config/
 [tmux](https://github.com/tmux/tmux) 终端复用器配置，包含 vi 风格键位、C-a 前缀键、状态栏美化、TPM 插件系统（自动保存/恢复会话）。
 
 详见 [`tmux/README.md`](./tmux/README.md)
+
+### [vscode-neovim](./vscode-neovim/)
+
+Neovim 双模式配置：同一套 `~/.config/nvim` 在 VSCode（通过 vscode-neovim 插件）和原生终端自动切换。基于 LazyVim 框架，含 Monokai Pro 主题、LSP/格式化/补全、44 个功能插件。
+
+详见 [`vscode-neovim/README.md`](./vscode-neovim/README.md)
 
 ## 设计理念
 
