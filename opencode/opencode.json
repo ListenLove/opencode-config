@@ -5,9 +5,23 @@
   "small_model": "opencode-go/deepseek-v4-flash",
   "lsp": true,
   "skills": {
-    "paths": ["./skills"]
+    "paths": [
+      "./skills"
+    ]
   },
-  "plugin": [["@plannotator/opencode@latest", {"workflow": "plan-agent"}]],
+  "plugin": [
+    [
+      "@plannotator/opencode@latest",
+      {
+        "workflow": "plan-agent"
+      }
+    ],
+    "opencode-firecrawl@latest",
+    "opencode-notify@latest",
+    "opencode-wakatime@latest",
+    "opencode-background-agents@latest",
+    "opencode-morph-fast-apply@latest"
+  ],
   "command": {
     "deepmax": {
       "template": "请立即使用 skill 工具加载 deepmax 技能。加载后，在当前对话的后续所有回复中，持续以 DeepSeek MAX 模式运行——进行最深度的推理分析，不跳过任何推理步骤，主动探索多种方案并自我纠错。",
@@ -35,7 +49,38 @@
   "mcp": {
     "markitdown": {
       "type": "local",
-      "command": ["uvx", "markitdown-mcp"],
+      "command": [
+        "uvx",
+        "markitdown-mcp"
+      ],
+      "enabled": true
+    },
+    "context7": {
+      "type": "remote",
+      "url": "https://mcp.context7.com/mcp",
+      "enabled": true,
+      "headers": {
+        "CONTEXT7_API_KEY": "YOUR_CONTEXT7_API_KEY"
+      }
+    },
+    "sequential-thinking": {
+      "type": "local",
+      "command": ["npx", "-y", "@modelcontextprotocol/server-sequential-thinking"],
+      "enabled": true
+    },
+    "memory": {
+      "type": "local",
+      "command": ["npx", "-y", "@modelcontextprotocol/server-memory"],
+      "enabled": true
+    },
+    "git": {
+      "type": "local",
+      "command": ["uvx", "mcp-server-git"],
+      "enabled": true
+    },
+    "playwright": {
+      "type": "local",
+      "command": ["npx", "@playwright/mcp@latest"],
       "enabled": true
     }
   }
